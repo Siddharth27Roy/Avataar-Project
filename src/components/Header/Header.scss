@@ -1,0 +1,139 @@
+$light-bg: rgb(203, 213, 225);
+$light-text: #242329;
+
+$dark-bg: #2F302C;
+$dark-text: rgb(245, 245, 245);
+
+.light #main-menu{
+    background-color: $light-bg;
+    color: $light-text;
+}
+
+.dark #main-menu{
+    background-color: $dark-bg;
+    color: $dark-text;
+}
+
+.light .more-menu{
+    background-color: $light-bg;
+    color: $light-text;
+}
+
+.dark .more-menu{
+    background-color: $dark-bg;
+    color: $dark-text;
+}
+
+#main-menu {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 112px;
+
+        .logo-li {
+            padding-left: 20px;
+
+            .logo {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+        .menu-item {
+            margin-right: 10px;
+
+            &.active {
+                color: red; //active item will be highlighted, feature of NavLink from react-router-dom
+            }
+        }
+
+        .more-item {
+            position: relative;
+
+            .more-btn {
+                display: flex;
+                align-items: center;
+                margin-right: 4px;
+                margin-left: 4px;
+                cursor: pointer;
+            }
+
+            .more-menu {
+                display: flex;
+                flex-direction: column;
+                width: 176px;
+                position: absolute;
+                top: 80px;
+                left: -48px;
+                z-index: 50;
+                border-radius: 8px;
+
+                .more-menu-li {
+                    padding: 12px;
+                }
+            }
+        }
+
+        .nav-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+            margin-left: 8px;
+            padding-right: 20px;
+            z-index: 30;
+
+            .search {
+                display: flex;
+                align-items: center;
+                margin-right: 6px;
+                border-bottom-width: 2px;
+                width: 384px;
+
+                &-input {
+                    background-color: transparent;
+                    margin-left: 5px;
+                    outline: none;
+                }
+            }
+
+            .toggle-btn {
+                font-weight: 500;
+
+                &:hover {
+                    color: #9234ea;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #main-menu {
+        .navbar {
+            .logo-li {
+                padding-left: 0px;
+            }
+
+            .nav-btn {
+                justify-content: end;
+                padding-right: 0px;
+            }
+
+            .search {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    #main-menu {
+        .navbar {
+            .search {
+                width: 256px;
+            }
+        }
+    }
+}

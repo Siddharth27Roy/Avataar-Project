@@ -1,0 +1,107 @@
+.light #main-menu {
+  background-color: rgb(203, 213, 225);
+  color: #242329;
+}
+
+.dark #main-menu {
+  background-color: #2F302C;
+  color: rgb(245, 245, 245);
+}
+
+.light .more-menu {
+  background-color: rgb(203, 213, 225);
+  color: #242329;
+}
+
+.dark .more-menu {
+  background-color: #2F302C;
+  color: rgb(245, 245, 245);
+}
+
+#main-menu .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 112px;
+}
+#main-menu .navbar .logo-li {
+  padding-left: 20px;
+}
+#main-menu .navbar .logo-li .logo {
+  font-size: 18px;
+  line-height: 28px;
+}
+#main-menu .navbar .menu-item {
+  margin-right: 10px;
+}
+#main-menu .navbar .menu-item.active {
+  color: red;
+}
+#main-menu .navbar .more-item {
+  position: relative;
+}
+#main-menu .navbar .more-item .more-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+#main-menu .navbar .more-item .more-menu {
+  display: flex;
+  flex-direction: column;
+  width: 176px;
+  position: absolute;
+  top: 80px;
+  left: -48px;
+  z-index: 50;
+  border-radius: 8px;
+}
+#main-menu .navbar .more-item .more-menu .more-menu-li {
+  padding: 12px;
+}
+#main-menu .navbar .nav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  margin-left: 8px;
+  padding-right: 20px;
+  z-index: 30;
+}
+#main-menu .navbar .nav-btn .search {
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+  border-bottom-width: 2px;
+  width: 384px;
+}
+#main-menu .navbar .nav-btn .search-input {
+  background-color: transparent;
+  margin-left: 5px;
+  outline: none;
+}
+#main-menu .navbar .nav-btn .toggle-btn {
+  font-weight: 500;
+}
+#main-menu .navbar .nav-btn .toggle-btn:hover {
+  color: #9234ea;
+}
+
+@media (max-width: 700px) {
+  #main-menu .navbar .logo-li {
+    padding-left: 0px;
+  }
+  #main-menu .navbar .nav-btn {
+    justify-content: end;
+    padding-right: 0px;
+  }
+  #main-menu .navbar .search {
+    display: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  #main-menu .navbar .search {
+    width: 256px;
+  }
+}/*# sourceMappingURL=Header.css.map */

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, NavLink} from 'react-router-dom';
 import useTheme from '../../contexts/theme'
+import './Header.css'
 
 
 import { MdOutlineDarkMode } from "react-icons/md";
@@ -79,35 +80,35 @@ const Header = () => {
 
     return (   
     
-    <nav  className='dark:bg-[#2F302C] bg-slate-300' id="main-menu">
-        <ul className='flex dark:text-white text-slate-800 justify-between items-center h-28 '>
+    <nav  id="main-menu" className=''>
+        <ul className='navbar'>
 
-            <li className='sm:pl-5'>   
+            <li className='logo-li'>   
                 <Link to='/' >
-                    <p className='text-lg font-bold'>E-COMM</p>
+                    <p className='logo'>E-COMM</p>
                 </Link>
             </li>
 
             {mainMenuItems.map((item, index) => (
             <li key={index}>
-                <NavLink to={item.slug} className={({isActive}) => `dark:text-neutral-100 text-[#242329] mr-[10px] ${isActive ? "text-red-500 dark:text-red-500" : "text-gray-700 "}`}>{item.name}</NavLink>
+                <NavLink to={item.slug} className='menu-item'>{item.name}</NavLink>
             </li>
             ))}
             
-            <div id='mydiv' className='relative '>
-                <div className='flex items-center space-x-1'>
-                    <button id='more-btn' onClick={changeToggleHandler} className='relative'>MORE </button>
+            <div className='more-item'>
+                <div onClick={changeToggleHandler} className='more-btn'>
+                    <button>MORE </button>
                     <GoChevronDown />
                 </div>
                 {toggle === true && (
-                    <ul className="more-menu absolute top-20 -left-12 z-50 flex-col w-44 rounded-lg dark:text-white text-slate-800 dark:bg-[#2F302C] bg-slate-300">
+                    <ul className="more-menu">
                     {moreMenuItems.map((item, index) => (
-                        <li key={index} className="p-3">
+                        <li key={index} className="more-menu-li">
                         <NavLink to={item.slug}>{item.name}</NavLink>
                         </li>
                     ))}
                     {moreNavItems.map((item, index) => (
-                        <li key={index} className="p-3">
+                        <li key={index} className="more-menu-li">
                         <NavLink to={item.slug}>{item.name}</NavLink>
                         </li>
                     ))}
@@ -116,12 +117,12 @@ const Header = () => {
             </div>
 
 
-            <div className="nav_btns  flex sm:justify-center justify-end items-center space-x-2 sm:pr-5 z-30">
-                <div className='dark:text-white sm:flex items-center space-x-2 border-b-2 sm:w-64 hidden lg:w-96 '>
+            <div className="nav-btn">
+                <div className='search'>
                     <p><CiSearch /></p>
-                    <input type="text" placeholder='Search Something' className=' dark:text-white bg-transparent  outline-none'/> 
+                    <input type="text" placeholder='Search Something' className='search-input'/> 
                 </div>
-                <button onClick={themeModeHandler} className='text-[#242329] dark:text-white font-medium text-xl hover:text-[#9234ea] dark:hover:text-[#9234ea]'>
+                <button onClick={themeModeHandler} className='toggle-btn'>
                     {
                         themeMode === "dark" ? (<MdOutlineLightMode />) : (<MdOutlineDarkMode/>)
                     }
